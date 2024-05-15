@@ -1,0 +1,20 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<script setup lang="ts">
+import ShopProductList from './ShopProductList.vue'
+
+defineProps<{
+  products: ProductInterface[]
+}>()
+
+const emit = defineEmits<{
+  (e: 'addProductToCart', productId: number): void
+}>()
+</script>
+
+<template>
+  <div>
+    <ShopProductList @add-product-to-cart="emit('addProductToCart', $event)" :products="products" />
+  </div>
+</template>
+
+<style lang="scss" scoped></style>
