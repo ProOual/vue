@@ -7,7 +7,7 @@ const props = defineProps<{
   carts: ProductCartInterface[]
 }>()
 const emit = defineEmits<{
-  (e: 'removeProductFromCart', productId: number): void
+  (e: 'removeProductFromCart', productId: string): void
 }>()
 </script>
 
@@ -16,7 +16,7 @@ const emit = defineEmits<{
     <CartProduct
       v-for="cart of props.carts"
       :cart="cart"
-      :key="cart.id"
+      :key="cart._id"
       @remove-product-from-cart="emit('removeProductFromCart', $event)"
     />
   </div>

@@ -73,4 +73,4 @@ export default [
     prix: 899,
     category: 'streaming'
   }
-] as ProductInterface[]
+]

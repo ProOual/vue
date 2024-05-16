@@ -3,7 +3,7 @@
 
 <template>
   <footer class="d-flex flex-row justify-content-center align-items-center">
-    <p class="text">Copyright © 2014-2022 Dyma</p>
+    <p class="text">Copyright © 2024 Oualali</p>
   </footer>
 </template>
 

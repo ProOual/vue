@@ -7,7 +7,7 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'removeProductFromCart', productId: number): void
+  (e: 'removeProductFromCart', productId: string): void
 }>()
 </script>
 
@@ -16,7 +16,7 @@ const emit = defineEmits<{
     <strong class="mr-10">{{ cart.title }}</strong>
     <span class="flex-fill mr-10">x {{ cart.quantity }}</span>
     <span class="mr-10">Prix : {{ cart.prix }}€</span>
-    <button class="btn btn-danger" @click="emit('removeProductFromCart', cart.id)">
+    <button class="btn btn-danger" @click="emit('removeProductFromCart', cart._id)">
       Supprimer
     </button>
   </div>

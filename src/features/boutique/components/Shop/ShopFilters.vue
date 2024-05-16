@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/require-v-for-key -->
 <!-- eslint-disable vue/require-v-for-key -->
 <script setup lang="ts">
-import type { Category, FiltersInterface, FilterUpdate } from '../../interface'
+import type { Category, FiltersInterface, FilterUpdate } from '../../../../interface'
 defineProps<{
   filters: FiltersInterface
 }>()

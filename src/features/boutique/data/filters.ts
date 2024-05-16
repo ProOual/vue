@@ -1,4 +1,4 @@
-import type { FiltersInterface } from '../interface'
+import type { FiltersInterface } from '../../../interface'
 
 export const DEFAULT_FILTERS: FiltersInterface = {
   search: '',
