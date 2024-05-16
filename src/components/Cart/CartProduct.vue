@@ -1,5 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import type { ProductCartInterface } from '@/interface'
+
 defineProps<{
   cart: ProductCartInterface
 }>()
@@ -13,7 +15,7 @@ const emit = defineEmits<{
   <div class="mb-10 p-10 d-flex flex-row align-items-center product">
     <strong class="mr-10">{{ cart.title }}</strong>
     <span class="flex-fill mr-10">x {{ cart.quantity }}</span>
-    <span class="mr-10">Prix : {{ cart.price }}€</span>
+    <span class="mr-10">Prix : {{ cart.prix }}€</span>
     <button class="btn btn-danger" @click="emit('removeProductFromCart', cart.id)">
       Supprimer
     </button>

@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import type { ProductCartInterface } from '@/interface'
 import CartProductList from './CartProductList.vue'
 import { computed } from 'vue'
 
@@ -12,7 +13,7 @@ const emit = defineEmits<{
 }>()
 
 const totalPrice = computed(() =>
-  props.carts.reduce((acc, product) => acc + product.price * product.quantity, 0)
+  props.carts.reduce((acc, product) => acc + product.prix * product.quantity, 0)
 )
 </script>
 

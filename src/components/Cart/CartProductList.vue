@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import type { ProductCartInterface } from '@/interface'
 import CartProduct from './CartProduct.vue'
 
 const props = defineProps<{

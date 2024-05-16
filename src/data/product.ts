@@ -1,3 +1,5 @@
+import type { ProductInterface } from '@/interface'
+
 export default [
   {
     id: 1,
@@ -5,7 +7,8 @@ export default [
     title: 'Macbook Pro',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 1500
+    prix: 1500,
+    category: 'gamer'
   },
   {
     id: 2,
@@ -13,7 +16,8 @@ export default [
     title: 'Levono Pro',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 2300
+    prix: 2300,
+    category: 'desktop'
   },
   {
     id: 3,
@@ -21,7 +25,8 @@ export default [
     title: 'Rider',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 1200
+    prix: 1200,
+    category: 'gamer'
   },
   {
     id: 4,
@@ -29,7 +34,8 @@ export default [
     title: 'LDLC benolo',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 4500
+    prix: 4500,
+    category: 'streaming'
   },
   {
     id: 5,
@@ -37,7 +43,8 @@ export default [
     title: 'Asus gamer',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 3755
+    prix: 3755,
+    category: 'desktop'
   },
   {
     id: 6,
@@ -45,7 +52,8 @@ export default [
     title: 'Rog desktop',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 2452
+    prix: 2452,
+    category: 'desktop'
   },
   {
     id: 7,
@@ -53,7 +61,8 @@ export default [
     title: 'MSI play',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 1478
+    prix: 1478,
+    category: 'gamer'
   },
   {
     id: 8,
@@ -61,6 +70,7 @@ export default [
     title: 'Think pad',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing edolor tempore ipsam cum ipsum reiciendis',
-    price: 899
+    prix: 899,
+    category: 'streaming'
   }
-]
+] as ProductInterface[]
