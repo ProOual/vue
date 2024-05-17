@@ -3,12 +3,32 @@ import { useForm, useField } from 'vee-validate'
 import { z } from 'zod'
 import { toTypedSchema } from '@vee-validate/zod'
 import { onMounted, ref } from 'vue'
+import { addProduct, editProduct, getProduct } from '@/shared/services/product.service'
+import { useRoute, useRouter } from 'vue-router'
+import type { ProductFormInterface, ProductInterface } from '@/interface'
+
+const route = useRoute()
+const router = useRouter()
+const product = ref<ProductInterface | null>(null)
+
+if (route.params.productId) {
+  product.value = await getProduct(route.params.productId as string)
+}
+
+const initialValues = {
+  title: product.value ? product.value.title : '',
+  image: product.value ? product.value.image : '',
+  prix: product.value ? product.value.prix : '',
+  description: product.value ? product.value.description : '',
+  category: product.value ? product.value.category : ''
+}
 
 const firstInput = ref<HTMLInputElement | null>(null)
 onMounted(() => {
   firstInput.value?.focus()
 })
 const required = { required_error: 'Veuillez renseigner ce champ' }
+
 const validationSchema = toTypedSchema(
   z.object({
     title: z
@@ -28,7 +48,8 @@ const validationSchema = toTypedSchema(
 )
 
 const { handleSubmit, isSubmitting } = useForm({
-  validationSchema
+  validationSchema,
+  initialValues
 })
 
 const title = useField('title')
@@ -39,15 +60,12 @@ const category = useField('category')
 
 const trySubmit = handleSubmit(async (formValues, { resetForm }) => {
   try {
-    await fetch('https://restapi.fr/api/projetproducts', {
-      method: 'POST',
-      body: JSON.stringify(formValues),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    resetForm()
-    firstInput.value?.focus()
+    if (!product.value) {
+      await addProduct(formValues as ProductFormInterface)
+    } else {
+      await editProduct(product.value._id, formValues as ProductFormInterface)
+    }
+    router.push('/admin/productlist')
   } catch (e) {
     console.log(e)
   }

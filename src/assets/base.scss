@@ -204,3 +204,7 @@ label {
 .align-items-center {
   align-items: center;
 }
+
+a.router-link-active {
+  text-decoration: underline;
+}
